@@ -21,6 +21,10 @@ gem 'uglifier', '>= 1.3.0'
 #i18n p traduzir as paginas
 gem 'rails-i18n', '~> 5.1'
 
+#spinner p ficar bonitin
+
+gem 'tty-spinner'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
