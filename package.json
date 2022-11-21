@@ -1,5 +1,10 @@
 {
   "name": "time_to_answer",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Demershow/time_to_answer-curso_rails.git",
+  "author": "demershow <demersontorres520@gmail.com>",
+  "license": "MIT"
 }
