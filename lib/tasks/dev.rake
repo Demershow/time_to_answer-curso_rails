@@ -9,7 +9,7 @@ namespace :dev do
     show_spinner("Criando bd..."){%x(rails db:create)}
     show_spinner("Migrando bd..."){%x(rails db:migrate)}
     show_spinner("Povoando bd..."){%x(rails db:seed)}
-    show_spinner("Criando admin..."){%x(rails dev:add_default_admin)}
+    show_spinner("Adicionando administradores extras..."){ %x(rails dev:add_extra_admins)}
     show_spinner("Criando user..."){%x(rails dev:add_default_user)}
       else
     puts "Not in development"
@@ -33,6 +33,17 @@ namespace :dev do
     password_confirmation: 123456
     )
   end
+
+desc "Adiciona outros administradores extras"
+task add_extra_admins: :environment do
+    10.times do |i|
+    Admin.create!(
+    email: Faker::Internet.email,
+    password: DEFAULT_PASSWORD,
+    password_confirmation: DEFAULT_PASSWORD
+    )
+end
+end
 
   private
   def show_spinner(msg_start, msg_end = 'Concluido.')

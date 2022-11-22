@@ -13,6 +13,8 @@
         email: Email
         created_at: Criado em
         updated_at: Atualizado em
+        password: Senha
+        password_confirmation: Confirmação da Senha
       user:
         id: Código
         email: Email
