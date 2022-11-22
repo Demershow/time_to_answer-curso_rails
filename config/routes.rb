@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get 'welcome/index'
     get 'admins/index'
     get 'admins/edit/:id', to: 'admins#edit' 
-    resources :admins, only: [:index, :edit, :update, :destroy]
+    resources :admins, except: [:delete]
   end
   
   devise_for :admins
