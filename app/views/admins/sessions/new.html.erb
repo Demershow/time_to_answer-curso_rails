@@ -1,6 +1,7 @@
 <h2>Log in - Admin</h2>
+
 <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
+       <div class="flash <%= key %>"><%= value %></div>
 <% end %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -14,12 +15,12 @@
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
+  <% if devise_mapping.rememberable? -%>
     <div class="field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end %>
+  <% end -%>
 
   <div class="actions">
     <%= f.submit "Log in" %>
