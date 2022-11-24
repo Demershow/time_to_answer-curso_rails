@@ -25,6 +25,8 @@ gem 'kaminari'
 gem 'kaminari-i18n'
 
 
+gem "cocoon"
+
 gem 'faker'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 # gem 'turbolinks', '~> 5'
