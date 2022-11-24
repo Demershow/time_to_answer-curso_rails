@@ -8,6 +8,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
 
   def new
     @admin = Admin.new
+    console
   end
 
   def create

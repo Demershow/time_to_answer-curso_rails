@@ -24,3 +24,5 @@ Rails.application.config.assets.precompile += %w( sb-admin-2.js sb-admin-2.css
 Rails.application.config.assets.precompile += %w( jquery-2.2.3/dist/jquery.js )
 
 Rails.application.config.assets.precompile += %w( img.png )
+
+Rails.application.config.assets.precompile += %w(admin_devise.js admin_devise.css)
