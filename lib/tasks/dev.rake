@@ -12,6 +12,7 @@ namespace :dev do
     show_spinner("Adicionando administradores extras..."){ %x(rails dev:add_extra_admins)}
     show_spinner("Criando user..."){%x(rails dev:add_default_user)}
     show_spinner('Cadastrando assuntos padroẽs...'){%x(rails dev:add_default_subjects)}
+    show_spinner("Cadastrando algumas questões e respostas...") { %x(rails dev:add_answers_and_questions) }
       else
     puts "Not in development"
     end
@@ -55,6 +56,17 @@ task add_default_subjects: :environment do
   end
 end
 
+desc 'Adiciona questões e respostas'
+task add_answers_and_questions: :environment do
+  Subject.all.each do |subject| 
+    rand(5..10).times do |i|
+      Question.create!(
+        description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+        subject: subject
+      )
+    end
+  end
+end
 
   private
   def show_spinner(msg_start, msg_end = 'Concluido.')

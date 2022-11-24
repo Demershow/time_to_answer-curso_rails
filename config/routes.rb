@@ -6,9 +6,10 @@ Rails.application.routes.draw do
     get 'welcome/index'
   end
   namespace :admins_backoffice do
-    get 'welcome/index'
-    resources :admins, except: [:delete]
-    resources :subjects
+    get 'welcome/index' #dash
+    resources :admins, except: [:delete] #adms
+    resources :subjects #assuntos 
+    resources :questions  #questões
   end
   
   devise_for :admins
