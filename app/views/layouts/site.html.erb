@@ -65,13 +65,24 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
+        <h1>Site::Welcome#index</h1>
+        <p>Find me in app/views/site/welcome/index.html.erb</p>
+        <% if user_signed_in? %>
+        <p>Usuário ESTÁ logado / <%= current_user.email %> </p>
+        <% else %>
+        <p>Usuário NÃO está logado</p>
+        <% end %>
+        <% if admin_signed_in? %>
+        <p>Administrador ESTÁ logado / <%= current_admin.email %> </p>
+        <% else %>
+        <p>Administrador NÃO está logado</p>
+        <% end %>
+        </div>
         <%= yield %>
-      </div>
-    </div> <!-- /container -->
-
+        </div> <!-- /container -->
+    
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
