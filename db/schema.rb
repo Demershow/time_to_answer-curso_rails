@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2022_11_23_124208) do
   end
 
   create_table "answers", force: :cascade do |t|
-    t.integer "question_id"
     t.text "description", null: false
-    t.boolean "corret", default: false
+    t.integer "question_id"
+    t.boolean "correct", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
