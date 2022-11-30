@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admins_backoffice do
-    get 'welcome/index' #dash
+    get 'backoffice', to: 'admins_backoffice/welcome#index' 
     resources :admins, except: [:delete] #adms
     resources :subjects #assuntos 
     resources :questions  #questões
