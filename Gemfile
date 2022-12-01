@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'kaminari'
 gem 'kaminari-i18n'
 
+gem 'prawn-rails'
+
 
 gem "cocoon"
 
