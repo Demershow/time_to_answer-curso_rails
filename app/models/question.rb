@@ -3,6 +3,7 @@ class Question < ApplicationRecord
   has_many :answers
   accepts_nested_attributes_for :answers, allow_destroy: true, reject_if: :all_blank
   paginates_per 5
+  after_create :set_statistic
 
   scope :_search_subject_, ->(page, subject_id){
     includes(:answers, :subject).where(subject_id: subject_id).page(page)
@@ -17,4 +18,11 @@ class Question < ApplicationRecord
   scope :last_questions, ->(page) {
     includes(:answers, :subject).order('created_at desc').page(page)
   }
+
+  
+    private
+
+    def set_statistic
+    AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users])
+  end
 end
