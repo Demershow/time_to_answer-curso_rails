@@ -26,6 +26,8 @@ gem 'kaminari-i18n'
 
 gem 'prawn-rails'
 
+gem 'net-http'
+
 
 gem "cocoon"
 
